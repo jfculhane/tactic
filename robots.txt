@@ -1,0 +1,7 @@
+# tactic-ux.com
+# Allow all crawlers full access to the site.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tactic-ux.com/sitemap.xml
