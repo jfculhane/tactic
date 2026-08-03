@@ -2,36 +2,43 @@
 <!--
   Sitemap for tactic-ux.com.
   Update <lastmod> whenever a page's content changes.
-  Add a new <url> block here if you add pages beyond the four silos.
+  Add a new <url> block here if you add pages beyond these five.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://tactic-ux.com/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://tactic-ux.com/community.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://tactic-ux.com/development.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://tactic-ux.com/experimental.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://tactic-ux.com/contact.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
