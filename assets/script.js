@@ -125,6 +125,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Video popup modal (YouTube / Vimeo) ---------- */
+  const videoTriggers = document.querySelectorAll('.video-thumb-trigger');
+  const videoModal = document.querySelector('.video-modal-overlay');
+
+  if (videoTriggers.length && videoModal) {
+    const videoFrame = videoModal.querySelector('.video-modal-frame');
+    const videoClose = videoModal.querySelector('.video-modal-close');
+    let lastFocusedVideo = null;
+
+    function openVideo(embedUrl) {
+      lastFocusedVideo = document.activeElement;
+      const separator = embedUrl.includes('?') ? '&' : '?';
+      videoFrame.innerHTML =
+        '<iframe src="' + embedUrl + separator + 'autoplay=1" ' +
+        'title="Video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+      videoModal.classList.add('is-open');
+      videoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      videoClose.focus();
+    }
+
+    function closeVideo() {
+      videoFrame.innerHTML = ''; // removing the iframe stops playback
+      videoModal.classList.remove('is-open');
+      videoModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocusedVideo) lastFocusedVideo.focus();
+    }
+
+    videoTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => openVideo(trigger.dataset.videoEmbed));
+    });
+
+    videoClose.addEventListener('click', closeVideo);
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) closeVideo();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!videoModal.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeVideo();
+    });
+  }
+
   /* ---------- Mobile nav toggle ---------- */
   const navToggle = document.querySelector('.nav-toggle');
   const siteNav = document.querySelector('.site-nav');

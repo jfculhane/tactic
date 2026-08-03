@@ -643,3 +643,250 @@ ul{ list-style:none; margin:0; padding:0; }
   html{ scroll-behavior:auto; }
   .accordion-panel, .toggle-icon::after, .site-nav{ transition:none; }
 }
+
+/* ============ CONTACT PAGE ============ */
+.contact-wrap{
+  max-width:1180px;
+  margin:0 auto 120px;
+  padding:0 32px;
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:48px;
+  align-items:start;
+}
+
+.form-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:36px;
+}
+
+.field-group{
+  margin-bottom:22px;
+}
+.field-group:last-of-type{ margin-bottom:0; }
+.field-label{
+  display:block;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:8px;
+}
+.field-label .optional{
+  text-transform:none;
+  color:var(--stone);
+  font-weight:400;
+  letter-spacing:0;
+}
+.field-input,
+.field-textarea,
+.field-select{
+  width:100%;
+  font-family:var(--sans);
+  font-size:14.5px;
+  color:var(--ink);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:12px 14px;
+  transition:border-color 150ms ease, background 150ms ease;
+}
+.field-textarea{ resize:vertical; min-height:140px; }
+.field-input:focus,
+.field-textarea:focus,
+.field-select:focus{
+  outline:none;
+  border-color:var(--accent);
+  background:var(--card);
+}
+.field-select{ cursor:pointer; }
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.form-submit{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:14px;
+  color:#fff;
+  background:var(--ink);
+  border:0;
+  border-radius:8px;
+  padding:13px 22px;
+  cursor:pointer;
+  margin-top:6px;
+  transition:background 150ms ease;
+}
+.form-submit:hover{ background:var(--accent-ink); }
+
+.form-note{
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--stone);
+  margin:14px 0 0;
+}
+
+/* honeypot field — hidden from real visitors, catches basic bots */
+.hp-field{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.contact-aside{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.contact-aside-block{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  background:var(--card);
+}
+.contact-aside-label{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--stone);
+  margin:0 0 10px;
+}
+.contact-aside-value{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:17px;
+  margin:0;
+}
+.contact-aside-value a:hover{ color:var(--accent-ink); }
+.contact-aside-sub{
+  font-size:13px;
+  color:var(--ink-soft);
+  margin:8px 0 0;
+  line-height:1.5;
+}
+
+@media (max-width:900px){
+  .contact-wrap{
+    grid-template-columns:1fr;
+    padding:0 20px;
+  }
+  .form-card{ padding:24px; }
+  .form-row{ grid-template-columns:1fr; }
+}
+
+/* ============ VIDEO POPUP ============ */
+.video-thumb-trigger{
+  position:relative;
+  display:block;
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  cursor:pointer;
+  aspect-ratio:16/9;
+  background:var(--ink);
+}
+.video-thumb-trigger img,
+.video-thumb-trigger svg{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.video-thumb-trigger:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+.video-thumb-play{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(18,19,15,0.15);
+  transition:background 150ms ease;
+}
+.video-thumb-trigger:hover .video-thumb-play{ background:rgba(18,19,15,0.32); }
+.video-thumb-play span{
+  width:52px; height:52px;
+  border-radius:50%;
+  background:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.video-thumb-play span::before{
+  content:"";
+  border-style:solid;
+  border-width:9px 0 9px 14px;
+  border-color:transparent transparent transparent #fff;
+  margin-left:3px;
+}
+
+.video-modal-overlay{
+  position:fixed;
+  inset:0;
+  z-index:210;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 24px;
+  background:rgba(18,19,15,0.9);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity 200ms ease;
+}
+.video-modal-overlay.is-open{
+  opacity:1;
+  visibility:visible;
+}
+.video-modal-inner{
+  position:relative;
+  width:100%;
+  max-width:900px;
+}
+.video-modal-frame{
+  width:100%;
+  aspect-ratio:16/9;
+  background:#000;
+  border-radius:10px;
+  overflow:hidden;
+}
+.video-modal-frame iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+.video-modal-close{
+  position:absolute;
+  top:-46px;
+  right:0;
+  width:36px; height:36px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:background 150ms ease;
+}
+.video-modal-close:hover{ background:rgba(255,255,255,0.18); }
+.video-modal-close svg{ width:14px; height:14px; }
+
+@media (max-width:600px){
+  .video-modal-close{ top:-40px; }
+}
