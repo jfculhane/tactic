@@ -54,7 +54,7 @@ ul{ list-style:none; margin:0; padding:0; }
   width:100%;
   max-width:1180px;
   margin:0 auto;
-  padding:0 32px;
+  padding:0 50px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -173,10 +173,10 @@ ul{ list-style:none; margin:0; padding:0; }
 .accordion{
   max-width:1180px;
   margin:0 auto 120px;
-  padding:0 32px;
+  padding:0 16px;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:4px;
 }
 .accordion-item{
   background:var(--card);
@@ -196,8 +196,8 @@ ul{ list-style:none; margin:0; padding:0; }
   display:grid;
   grid-template-columns:36px 56px 1fr 96px 40px;
   align-items:center;
-  gap:18px;
-  padding:22px 28px;
+  gap:16px;
+  padding:16px 28px;
   background:none;
   border:0;
   cursor:pointer;
@@ -212,8 +212,8 @@ ul{ list-style:none; margin:0; padding:0; }
 }
 
 .item-thumb{
-  width:56px;
-  height:56px;
+  width:75px;
+  height:50px;
   border-radius:9px;
   overflow:hidden;
   background:var(--surface);
