@@ -326,6 +326,12 @@ ul{ list-style:none; margin:0; padding:0; }
   justify-content:center;
 }
 .media-frame svg{ width:100%; height:100%; }
+.media-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 .media-caption{
   font-family:var(--mono);
   font-size:11px;
@@ -635,12 +641,16 @@ ul{ list-style:none; margin:0; padding:0; }
   .index-intro{ padding:52px 20px 32px; }
   .accordion{ padding:0 20px; }
   .accordion-trigger{
-    grid-template-columns:44px 1fr 32px;
+    grid-template-columns:52px 1fr 32px;
     gap:12px;
-    padding:18px;
+    padding:16px 14px;
   }
   .item-index{ display:none; }
   .status-pill{ display:none; }
+  .item-thumb{
+    width:52px;
+    height:38px;
+  }
   .panel-inner{
     grid-template-columns:1fr;
     padding:20px 18px 26px;
