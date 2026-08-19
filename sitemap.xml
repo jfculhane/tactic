@@ -4,6 +4,8 @@
   Update <lastmod> whenever a page's content changes.
   Add a new <url> block here if you add pages beyond these five.
 -->
+
+<!-- test from dreamweaver via git -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
